@@ -36,10 +36,5 @@ public abstract class Funcionario {
 	public Double getSalario() {
 		return salario;
 	}
-
-	public void aumentarSalario() {
-	}
-	
-	
 	
 }
