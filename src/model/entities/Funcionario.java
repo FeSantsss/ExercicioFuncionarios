@@ -1,12 +1,14 @@
 package model.entities;
 
+import model.enums.Cargos;
+
 public abstract class Funcionario {
 	protected String nome;
-	protected String cargo;
+	protected Cargos cargo;
 	protected Integer numero;
 	protected Double salario;
 	
-	public Funcionario(String nome, String cargo, Integer numero, Double salario) {
+	public Funcionario(String nome, Cargos cargo, Integer numero, Double salario) {
 		this.nome = nome;
 		this.cargo = cargo;
 		this.numero = numero;
@@ -21,11 +23,11 @@ public abstract class Funcionario {
 		this.nome = nome;
 	}
 
-	public String getCargo() {
+	public Cargos getCargo() {
 		return cargo;
 	}
 
-	public void setCargo(String cargo) {
+	public void setCargo(Cargos cargo) {
 		this.cargo = cargo;
 	}
 
@@ -36,5 +38,17 @@ public abstract class Funcionario {
 	public Double getSalario() {
 		return salario;
 	}
+	
+	@Override
+	public String toString() {
+		return getNome()
+				+ " - "
+				+ getCargo()
+				+ " | Salário: $"
+				+ getSalario();
+		
+	}
+	
+	
 	
 }
